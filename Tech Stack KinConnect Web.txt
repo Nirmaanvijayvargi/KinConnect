@@ -1,0 +1,36 @@
+Tech Stack: KinConnect Web
+Architecture: Modern Serverless Web Application
+
+Primary Language: JavaScript (ES6+) / React
+
+1. Frontend (The User Interface)
+Since this is a college project requiring a "professional yet rapid" build, the frontend is centered on ease of deployment and high-quality UI components.
+
+Framework: React.js (Vite) * Why: Fast build times and a massive ecosystem for accessibility plugins.
+
+UI Library: Ant Design (AntD) * Why: Excellent grid systems and pre-built components (Cards, Uploaders, Drawers) that are easy to theme with your Crimson Red palette.
+
+State Management: React Context API * Why: Perfect for managing the "Time of Day" context and "Survivor vs. Caregiver" modes without the complexity of Redux.
+
+Styling: CSS Modules or Styled Components * Why: To handle specific Aphasia-friendly adjustments like massive touch targets and high-contrast borders.
+
+2. Backend-as-a-Service (Data & Auth)
+Using Firebase allows you to skip writing a custom Node.js/Express server and focus entirely on the AI and UI logic.
+
+Authentication: Firebase Auth * Why: Secure login for caregivers via Google or Email to keep family photos private.
+
+Database: Cloud Firestore * Why: A NoSQL real-time database to sync the "Communication Tiles" instantly between the Caregiver’s phone and the Survivor’s tablet.
+
+File Storage: Firebase Storage * Why: To store and serve the actual family photos uploaded by the caregiver.
+
+3. AI & Intelligence Layer
+This is the "Brain" of KinConnect that turns a photo into a communication tool.
+
+Vision AI: Gemini 1.5 Flash API * Why: Extremely fast and low-cost vision processing. It will identify objects in the family photos and suggest "Intent Phrases."
+
+Speech Engine: Web Speech API (Native Browser TTS) * Why: Zero-cost, zero-latency text-to-speech that works directly in Chrome/Safari without needing an external API key.
+
+4. Deployment & DevOps
+Hosting: Vercel * Why: Industry standard for React apps; provides a live URL for your college professors/judges to view the project instantly.
+
+Version Control: GitHub * Why: Essential for collaboration and tracking your development phases.

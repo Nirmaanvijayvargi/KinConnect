@@ -1,0 +1,46 @@
+Phase 1: The "Crimson" Foundation
+[ ] Initialize Project: Create a React app using Vite (npm create vite@latest).
+
+[ ] Install Dependencies: * antd (UI Library)
+
+firebase (Backend)
+
+@google/generative-ai (Gemini API)
+
+lucide-react (For clean, thin icons)
+
+[ ] Theme Setup: Create a ThemeConfig.js using Ant Design’s ConfigProvider to set the Primary Red (#D32F2F) and large border-radius.
+
+[ ] Firebase Config: Set up a Firebase project and paste the config keys into a .env file.
+
+Phase 2: Caregiver Portal (The "Input" Side)
+[ ] Image Uploader: Build a page using AntD Upload.Dragger for caregivers to drop family photos.
+
+[ ] Gemini Integration: Write the function to send the uploaded image to Gemini 1.5 Flash to get an auto-label (e.g., "Fridge" -> "I am hungry").
+
+[ ] Metadata Form: Create a simple AntD Modal where caregivers can confirm or edit the AI-generated label.
+
+[ ] Firestore Sync: Save the Image URL (from Storage) and the Label (to Firestore) in a tiles collection.
+
+Phase 3: The Survivor Interface (The "Output" Side)
+[ ] The Communication Grid: Build a responsive grid using AntD Row and Col that pulls images from Firestore.
+
+[ ] Large-Scale Cards: Style the cards so the image takes up almost the entire screen space.
+
+[ ] Voice Synthesis: Map the onClick event of the cards to the window.speechSynthesis API to speak the intent out loud.
+
+[ ] Click Feedback: Add a visual "ripple" or a thick Red border flash when a tile is tapped.
+
+Phase 4: Intelligence & Context
+[ ] Time-of-Day Filter: Write a logic helper that checks the current hour and sorts the tiles (e.g., show "Coffee" first if it's before 10 AM).
+
+[ ] The "Nudge" Feature: Create a useEffect timer that triggers an AntD notification (in soft red) if the screen hasn't been touched in 2 hours.
+
+[ ] Authentication: Lock the "Caregiver" settings behind a login screen so the Survivor doesn't accidentally change settings.
+
+Phase 5: Final Polish & Demo
+[ ] Responsive Testing: Ensure the grid looks perfect on a Tablet (iPad/Samsung Tab) since that is the most likely device for a survivor.
+
+[ ] Deployment: Push the code to GitHub and connect it to Vercel.
+
+[ ] Demo Content: Upload 5–10 "Real World" photos (dog, bed, water bottle, medicine) for a convincing presentation.
