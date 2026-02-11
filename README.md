@@ -1,100 +1,186 @@
-KinConnect: Agentic AI for Assistive Communication 🧠💬
+<p align="center">
+  <img src="./banner.png" alt="KinConnect Banner"/>
+</p>
 
-Experimental Learning Project | Woxsen University | B.Tech CSE (AI/ML)
+# **KinConnect: AI-Powered Assistive Communication 🧠💬**
 
-KinConnect is a zero-cognitive-load communication ecosystem designed for post-stroke survivors suffering from Aphasia and Hemiparesis. By integrating Gemini 2.0 Agentic AI with MediaPipe Computer Vision, the system enables hands-free communication through head-motion tracking and semantic UI adaptation.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://kinconnect.vercel.app/)
+![React](https://img.shields.io/badge/Built%20with-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![AI](https://img.shields.io/badge/Powered%20by-Gemini%202.0-blue?style=for-the-badge)
 
-🚩 The Problem: "The Interaction Barrier"
+**Woxsen University | B.Tech CSE (AI/ML)**
 
-Stroke survivors often lose both the ability to speak and the manual dexterity required for touchscreens.
+KinConnect is an AI-powered assistive communication system designed to restore independence, dignity, and ease of interaction for post-stroke aphasia survivors. The platform minimizes cognitive effort by combining **Agentic AI** with **Computer Vision**, enabling intuitive, hands-free communication for users with speech and motor impairments.
 
-Precision Deficit: Standard UIs require pixel-perfect touch, impossible for users with motor tremors.
+---
 
-Cognitive Fatigue: Searching through static icons is exhausting.
+## 🚩 **Problem Statement**
 
-Cost Barrier: Traditional eye-tracking hardware (e.g., Tobii) costs upwards of $5,000.
+Stroke survivors frequently experience:
 
-🚀 The Solution: "KinConnect"
+- **Aphasia** → Impaired ability to communicate verbally  
+- **Motor Impairment** → Reduced ability to use touch-based interfaces  
 
-KinConnect turns a standard laptop webcam and the power of LLMs into a life-changing accessibility tool:
+Existing communication solutions present major limitations:
 
-Head-Motion "Magnet Snap": Translates 3D head pose into a magnetic cursor that "snaps" to the nearest button.
+- **High Cognitive Load**  
+  Users must search through large icon sets to express simple intents.
 
-Blink-to-Select: A deliberate 400ms blink triggers selections, removing the need for physical clicking.
+- **Static Interfaces**  
+  Communication boards fail to adapt to context, routine, or time.
 
-Gemini 2.0 Semantic Sorter: The AI re-ranks communication tiles in real-time based on the time of day and the user's medical context.
+- **Expensive Hardware Dependency**  
+  Professional assistive systems often require costly eye-tracking equipment.
 
-Real-Time Caregiver Portal: Powered by Supabase, allowing caregivers to upload and label photos that appear instantly on the survivor's board.
+These barriers reduce usability, increase frustration, and limit user independence.
 
-🛠️ Technical Stack
+---
 
-Intelligence: Gemini 2.0 Flash
-Utilized for automated image labeling and contextual semantic ranking to reorganize the UI based on user needs.
+## 🚀 **Solution Philosophy — "Dignity Through Passive AI"**
 
-Vision: MediaPipe Face Landmarker
-Employs a 478-point facial mesh to provide high-precision head-pose estimation for hands-free navigation.
+KinConnect shifts complexity away from the user by enabling the system to intelligently adapt.
 
-Backend: Supabase (PostgreSQL)
-Facilitates real-time data synchronization and secure storage for communication assets and user logs.
+The platform introduces:
 
-Frontend: React 19 + Ant Design
-A high-performance, accessibility-first framework designed for high-contrast and low-latency interaction.
+- **Semantic Time-Sensing**  
+  AI dynamically prioritizes relevant communication tiles based on contextual cues.
 
-Voice: Web Speech API
-The primary text-to-speech engine responsible for verbalizing survivor intent and emergency alerts.
+- **Head-Motion Navigation**  
+  Standard webcams replace specialized hardware, enabling hands-free interaction.
 
-🔧 Engineering Hurdles & Milestones
+- **Autonomous Image Labeling**  
+  Caregiver-uploaded images are automatically classified and integrated.
 
-1. Signal Processing: The "Jitter" Solution
+- **Discrete Snap Interaction Model**  
+  Focus elements magnetically snap to targets, reducing precision requirements.
 
-Raw webcam data is inherently noisy. We implemented a Spatial Low-Pass Filter to smooth head-tracking coordinates.
+The system is designed to feel assistive rather than demanding.
 
-The Math: $X_{smoothed} = \frac{1}{n} \sum_{i=0}^{n-1} X_{raw, i}$
-By using a moving average of 15-25 frames, we achieved a "sticky" focus square that ignores minor tremors.
+---
 
-2. Backend Migration: Supabase over Firebase
+## 🛠️ **Core Capabilities**
 
-To maintain a robust free tier and utilize relational data, we migrated to Supabase. We implemented Row Level Security (RLS) policies to allow public access to the communication-tiles bucket while maintaining database integrity.
+- **Context-Aware Communication Ranking**  
+- **Hands-Free Navigation Engine**  
+- **Adaptive Cognitive Load Reduction**  
+- **AI-Based Object Recognition & Labeling**  
+- **Offline-First Data Persistence**  
+- **Voice Output & Alerts**
 
-💡 Key Learnings
+---
 
-Through the development of KinConnect, the team has mastered several critical domains:
+## ⚙️ **Technical Architecture**
 
-Human-Computer Interaction (HCI): Designing interfaces specifically for users with limited motor control, prioritizing high-contrast visuals and "magnet-snap" navigation.
+| Layer | Technology | Purpose |
+|------|-------------|----------|
+| **Frontend** | React + Vite | Low-latency, high-performance UI |
+| **AI Intelligence** | Gemini 2.0 Flash | Semantic ranking & labeling |
+| **Computer Vision** | MediaPipe Face Landmarker | Head-pose tracking |
+| **Storage** | IndexedDB (Dexie.js) | Offline-first survivor data |
+| **Accessibility** | Web Speech API | Voice feedback & alerts |
 
-Signal Processing: Implementing low-pass filters to transform raw, noisy sensor data into stable UI inputs.
+---
 
-Agentic AI Orchestration: Learning to use LLMs (Gemini 2.0) not just for chat, but as a "logic engine" that autonomously reorganizes interfaces based on real-world time and context.
+## 🔧 **Key Engineering Challenges**
 
-Full-Stack Data Integrity: Transitioning from local-first storage to a cloud-based SQL environment (Supabase) with real-time subscriptions.
+### **1️⃣ Head-Tracking Stability ("Jitter Problem")**
 
-Inclusive Engineering: Understanding that true accessibility requires making the app "learn the user," rather than forcing the user to learn the app.
+**Challenge:**  
+Raw head-pose data produced unstable cursor movement.
 
-📂 Project Structure
+**Solution:**  
+Implemented a **Spatial Low-Pass Filter (Moving Average)** to smooth motion and improve selection accuracy.
 
-/src/hooks/useHeadTracker.js: MediaPipe tracking logic and blink detection algorithm.
+---
 
-/src/hooks/useGemini.js: Integration with Gemini 2.0 for semantic ranking and image recognition.
+### **2️⃣ API Rate Limitation (429 Quota Error)**
 
-/src/services/supabase.js: Supabase client initialization and real-time data handlers.
+**Challenge:**  
+Frequent quota exhaustion during AI interactions.
 
-/src/components/Survivor/CommunicationGrid.jsx: The main high-contrast, accessible board.
+**Solution:**  
 
-🎓 Academic Context
+- Migrated to **Gemini 2.0 Flash**  
+- Implemented **Local Caching Layer**  
+- Reduced redundant API requests
 
-This project was developed during Tensor 2.0, a 24-hour hackathon organized by Woxsen University. It demonstrates the practical application of AI/ML in the field of Healthcare Accessibility within a high-pressure, rapid-development environment.
+---
 
-Team Members:
+### **3️⃣ Precision vs Accessibility Tradeoff**
 
-Prabheesh Singh
+**Challenge:**  
+Free-moving cursors require high motor precision.
 
-Nirmaan Vijay Vargi
+**Solution:**  
+Designed a **Discrete Snap Engine** enabling magnetized focus behavior.
 
-Nakshatra Vijay Vargi
+---
 
-Ronak Kadyan
+## 🎯 **Design Principles**
 
-Pawani Dwivedi
+KinConnect prioritizes:
 
-Year: B.Tech CSE (AI/ML) 1st Year
-Location: Woxsen University, Hyderabad
+- Cognitive load minimization  
+- Frictionless interaction  
+- Hardware accessibility  
+- User dignity & autonomy  
+- Error-tolerant navigation  
+
+---
+
+## 📂 **Project Structure**
+
+- `/src/hooks/useGemini.js` → AI ranking & labeling logic  
+- `/src/hooks/useHeadTracker.js` → Head-tracking engine  
+- `/src/components/Dashboard.jsx` → Survivor board  
+- `/src/components/Portal.jsx` → Caregiver interface  
+
+---
+
+## 🚧 **Project Status**
+
+✅ Functional Prototype  
+🚧 Research & Iteration Phase  
+
+KinConnect is developed as an experimental academic system exploring AI-driven accessibility and assistive interaction design.
+
+---
+
+## 🎓 **Key Learnings**
+
+KinConnect provided deep insights into AI, usability, and accessibility engineering:
+
+- **Cognitive Load is a Primary Constraint**  
+- **Stability > Sensitivity in Assistive Interaction**  
+- **Contextual Intelligence Improves Usability**  
+- **Error-Tolerant Design is Critical**  
+- **Assistive Systems Require Multidisciplinary Thinking**
+
+---
+
+## 👥 **Team — Team Quack 🦆**
+
+KinConnect was developed collaboratively as part of an experimental academic initiative.
+
+- **Nirmaan Vijay Vargi** 
+- **Nakshatra Vijay Vargi** 
+- **Prabheesh Singh** 
+- **Ronak Kadyan** 
+- **Pawani Dwivedi** 
+
+---
+
+## 🌍 **Vision**
+
+KinConnect explores how **passive intelligence and low-cost sensing technologies** can transform assistive communication systems — making them adaptive, accessible, and human-centered.
+
+
+## ✨ Why KinConnect Matters
+
+KinConnect is designed around a simple principle:
+
+> Assistive systems should reduce effort, not introduce complexity.
+
+By combining AI-driven contextual intelligence with low-cost sensing technologies, KinConnect explores how accessibility tools can become adaptive, intuitive, and widely deployable.
+
+---
