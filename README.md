@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner" alt="KinConnect Banner"/>
+  <img src="./banner.png" alt="KinConnect Banner"/>
 </p>
 
 
