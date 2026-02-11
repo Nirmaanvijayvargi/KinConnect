@@ -2,6 +2,7 @@
   <img src="./banner.png" alt="KinConnect Banner"/>
 </p>
 
+
 # **KinConnect: AI-Powered Assistive Communication 🧠💬**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://kinconnect.vercel.app/)
