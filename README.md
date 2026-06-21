@@ -9,7 +9,6 @@
 ![React](https://img.shields.io/badge/Built%20with-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![AI](https://img.shields.io/badge/Powered%20by-Gemini%202.0-blue?style=for-the-badge)
 
-**Woxsen University | B.Tech CSE (AI/ML)**
 
 KinConnect is an AI-powered assistive communication system designed to restore independence, dignity, and ease of interaction for post-stroke aphasia survivors. The platform minimizes cognitive effort by combining **Agentic AI** with **Computer Vision**, enabling intuitive, hands-free communication for users with speech and motor impairments.
 
